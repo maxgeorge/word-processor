@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}wordprocessor_standard.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS,Europe/Amsterdam}] [%t] [%p] %c{5} %X{operation} %X{service} - %m%n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_PATH}wordprocessor_standard_%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10KB</maxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <logger name="com.ordina.assignment.wordprocessor" additivity="false">
+        <level VALUE="DEBUG"/>
+        <appender-ref ref="FILE" />
+    </logger>
+</configuration>
