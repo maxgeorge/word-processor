@@ -1,0 +1,23 @@
+
+#compiled output
+
+dist
+tmp
+bin/
+
+#dependencies
+
+target/
+
+
+
+#IDE
+
+/.idea
+.project
+.classpath
+.settings/
+*.sublime-workspace
+
+
+
